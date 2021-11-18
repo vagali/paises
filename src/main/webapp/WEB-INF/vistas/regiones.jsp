@@ -10,8 +10,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<section id="cuerpo">
-		<article id="contenido">
+<section>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>
+					<spring:message code="app.titulo.Paises" />
+				</h1>
+				<p>Paises</p>
+			</div>
+		</div>
+	</section>
+	<section class="container">
+		<div class="row">
+
 			<h2>Regiones</h2>
 
 			<div class="divTabla">
@@ -28,8 +39,7 @@
 					</c:forEach>
 				</table>
 			</div>
-
-		</article>
+		</div>
 	</section>
 </body>
 </html>

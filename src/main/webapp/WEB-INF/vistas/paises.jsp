@@ -33,11 +33,13 @@
 						<td>${pais.countryId }</td>
 						<td>${pais.countryName }</td>
 						<td><a>Borrar</a></td>
-						<!--  href="pais/borrar/${pais.countryId}"-->
+						<!-- Falta testear
+						 href="pais/borrar/${pais.countryId}"-->
 					</tr>
 				</c:forEach>
 			</table>
-		<!--  	<a href="pais/nuevo/${pais.regionId }"
+		<!--  	Falta enviar el regionId para poder dar de alta un nuevo pais a esa region
+		<a href="pais/nuevo/${pais.regionId }"
 				class="btn btn-primary btn-lg active" role="button">Añadir nuevo
 				pais</a>-->
 		</div>

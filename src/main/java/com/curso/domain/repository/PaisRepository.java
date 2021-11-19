@@ -3,15 +3,13 @@ package com.curso.domain.repository;
 import java.util.List;
 
 import com.curso.domain.Contrie;
-import com.curso.domain.Producto;
-import com.curso.domain.Region;
 
 public interface PaisRepository {
-	List <Contrie> getAllPaises(int idPais);
+	List <Contrie> getAllPaisesByRegion(int idRegion);
 
-	Contrie findById(int idPais);
+	Contrie findById(String idPais);
 
-	void remove(int idPais);
+	void remove(String idPais);
 
 	void addPais(Contrie nuevoPais);
 }

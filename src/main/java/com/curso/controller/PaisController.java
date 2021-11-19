@@ -18,28 +18,30 @@ import com.curso.service.PaisService;
 public class PaisController {
 	@Autowired
 	private PaisService paisService;
-
+	private int id;
+	
 	@GetMapping(path = "/pais/{idRegion}")
 	public String getPaises(Model model,@PathVariable("idRegion") int idRegion) {
-		model.addAttribute("paises", paisService.getAllPaises(idRegion));
+		model.addAttribute("paises", paisService.getAllPaisesByRegion(idRegion));
+		this.id = idRegion;
 		return "paises";
 	}
 	@GetMapping(value = "/pais/borrar/{idPais}")
-	public String removeProducto(@RequestParam("idPais") int idPais) {
+	public String removeProducto(@PathVariable("idPais") String idPais) {
 		paisService.remove(idPais);
-		return "redirect:/regiones";
+		return "redirect:/";
 	}
-	@GetMapping(value = "/pais/nuevo")
+	@GetMapping(value = "/pais/nuevo/")
 	public String getNuevoPaisFormu(Model model) {
 		Contrie nuevoPais = new Contrie();
-		model.addAttribute("nuevoProducto", nuevoPais);
+		model.addAttribute("nuevoPais", nuevoPais);
 		return "nuevo-pais";
 	}
 
-	@PostMapping(value = "/productos/nuevo/{regionId}")
-	public String crearProducto(@ModelAttribute("nuevoPais") Contrie nuevoPais,@PathVariable("idRegion") int idRegion) {
-		nuevoPais.setRegionID(idRegion);
+	@PostMapping(value = "/pais/nuevo/")
+	public String crearProducto(@ModelAttribute("nuevoPais") Contrie nuevoPais) {
+		nuevoPais.setRegionID(this.id);
 		paisService.addPais(nuevoPais);
-		return "redirect:/paises";
+		return "redirect:/";
 	}
 }

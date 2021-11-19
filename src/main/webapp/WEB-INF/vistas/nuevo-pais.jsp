@@ -24,20 +24,19 @@
 			class="form-horizontal">
 			<fieldset>
 				<legend>Añadir Nuevo Pais</legend>
-
+				
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="countryId">
-						Id Pais </label>
+					<label class="control-label col-lg-2 col-lg-2" for="countryId">id</label>
 					<div class="col-lg-10">
-						<form:input id="idProducto" path="countryId" type="text"
+						<form:input id="countryId" path="countryId" type="text"
 							class="form:input-large" />
-							<form:errors path="idProducto" cssClass="text-danger" />
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="countryName">Nombre</label>
 					<div class="col-lg-10">
-						<form:input id="nombre" path="countryName" type="text"
+						<form:input id="countryName" path="countryName" type="text"
 							class="form:input-large" />
 					</div>
 				</div>

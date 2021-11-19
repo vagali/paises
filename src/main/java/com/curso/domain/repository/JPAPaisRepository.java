@@ -15,19 +15,19 @@ public class JPAPaisRepository implements PaisRepository {
 	private EntityManager entityManager;
 	
 	@Override
-	public List<Contrie> getAllPaises(int idPais) {
-		Query query = entityManager.createNamedQuery("Pais.findAll").setParameter("id", idPais);
+	public List<Contrie> getAllPaisesByRegion(int idRegion) {
+		Query query = entityManager.createNamedQuery("Pais.findAll").setParameter("id", idRegion);
 		return query.getResultList();
 	}
 
 	@Override
-	public Contrie findById(int idPais) {
+	public Contrie findById(String idPais) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Contrie.class, idPais);
 	}
 
 	@Override
-	public void remove(int idPais) {
+	public void remove(String idPais) {
 		entityManager.remove(findById(idPais));
 		
 	}

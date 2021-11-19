@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Paises</title>
 </head>
 <body>
@@ -32,16 +34,14 @@
 					<tr>
 						<td>${pais.countryId }</td>
 						<td>${pais.countryName }</td>
-						<td><a>Borrar</a></td>
-						<!-- Falta testear
-						 href="pais/borrar/${pais.countryId}"-->
+						<td><a href="borrar/${pais.countryId}" class="fa fa-trash"></a></td>
+
 					</tr>
 				</c:forEach>
 			</table>
-		<!--  	Falta enviar el regionId para poder dar de alta un nuevo pais a esa region
-		<a href="pais/nuevo/${pais.regionId }"
-				class="btn btn-primary btn-lg active" role="button">Añadir nuevo
-				pais</a>-->
+			<!--  	Falta enviar el regionId para poder dar de alta un nuevo pais a esa region-->
+			<a href="nuevo/" class="btn btn-primary btn-lg active" role="button">Añadir
+				nuevo pais</a>
 		</div>
 	</section>
 </body>

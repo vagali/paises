@@ -31,13 +31,13 @@ public class PaisController {
 		paisService.remove(idPais);
 		return "redirect:/";
 	}
+	//falta validar q los datos recogidos no sean null, y q el nuevo pais no exista
 	@GetMapping(value = "/pais/nuevo/")
 	public String getNuevoPaisFormu(Model model) {
 		Contrie nuevoPais = new Contrie();
 		model.addAttribute("nuevoPais", nuevoPais);
 		return "nuevo-pais";
 	}
-
 	@PostMapping(value = "/pais/nuevo/")
 	public String crearProducto(@ModelAttribute("nuevoPais") Contrie nuevoPais) {
 		nuevoPais.setRegionID(this.id);

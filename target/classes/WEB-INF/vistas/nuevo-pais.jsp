@@ -30,6 +30,7 @@
 					<div class="col-lg-10">
 						<form:input id="countryId" path="countryId" type="text"
 							class="form:input-large" />
+							<form:errors path="countryId" cssClass="text-danger" />
 					</div>
 				</div>
 				
@@ -38,6 +39,7 @@
 					<div class="col-lg-10">
 						<form:input id="countryName" path="countryName" type="text"
 							class="form:input-large" />
+							<form:errors path="countryName" cssClass="text-danger" />
 					</div>
 				</div>
 

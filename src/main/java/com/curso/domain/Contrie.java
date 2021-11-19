@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 @NamedQueries({
 	@NamedQuery(name = "Pais.findAll",
 			query = "SELECT p FROM Contrie p where p.regionId =: id"),
@@ -19,8 +21,11 @@ import javax.persistence.Table;
 public class Contrie implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
+	@NotNull
+	@Size(min = 2, max = 2)
 	@Column(name = "COUNTRY_ID")
 	private String countryId;
+	@NotNull
 	@Column(name = "COUNTRY_NAME")
 	private String countryName;
 	@Column(name = "REGION_ID")
